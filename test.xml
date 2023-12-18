@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<wrapper
+  xmlns="https://camunda.com/sdmn-test"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dmn="https://www.omg.org/spec/DMN/20191111/MODEL/"
+  xsi:schemaLocation="https://camunda.com/sdmn-test test.xsd"
+  >
+  <dmn:itemDefinition name=""></dmn:itemDefinition>
+
+</wrapper>

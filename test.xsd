@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<xsd:schema
+  targetNamespace="https://camunda.com/sdmn-test"
+  xmlns="https://camunda.com/sdmn-test"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:dmn13="https://www.omg.org/spec/DMN/20191111/MODEL/"
+  xmlns:dmn15="https://www.omg.org/spec/DMN/20230324/MODEL/"
+>
+  <xsd:import namespace="https://www.omg.org/spec/DMN/20191111/MODEL/"
+              schemaLocation="./DMN13/DMN13.xsd" />
+  <xsd:import namespace="https://www.omg.org/spec/DMN/20230324/MODEL/"
+              schemaLocation="./DMN15/DMN15.xsd" />
+  <xsd:element name="wrapper" type="tWrapper"/>
+  <xsd:complexType name="tWrapper">
+    <xsd:choice>
+      <xsd:element ref="dmn13:itemDefinition" />
+      <xsd:element ref="dmn15:itemDefinition" />
+    </xsd:choice>
+  </xsd:complexType>
+</xsd:schema>
