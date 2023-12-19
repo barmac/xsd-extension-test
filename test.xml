@@ -1,10 +1,21 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<wrapper
-  xmlns="https://camunda.com/sdmn-test"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:dmn="https://www.omg.org/spec/DMN/20191111/MODEL/"
-  xsi:schemaLocation="https://camunda.com/sdmn-test test.xsd"
-  >
-  <dmn:itemDefinition name=""></dmn:itemDefinition>
-
-</wrapper>
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+xmlns="https://camunda.com/sdmn-test"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:dmn13="https://www.omg.org/spec/DMN/20191111/MODEL/"
+xmlns:dmn15="https://www.omg.org/spec/DMN/20230324/MODEL/"
+xsi:schemaLocation="https://camunda.com/sdmn-test test.xsd"
+>
+  <itemDefinition>
+    <dmn13:itemDefinition name=""></dmn13:itemDefinition>
+  </itemDefinition>
+  <!-- <itemDefinition dmn15:name="name" dmn15:isCollection="true">
+    <dmn15:itemDefinition name="" isCollection="true" />
+  </itemDefinition> -->
+  <!-- <dmn15:itemDefinition name="" isCollection="true" /> -->
+  <extendedItemDefinition isCollection="true" itemKind="physical" madeUp="aaa">
+    <dmn13:typeRef>string</dmn13:typeRef>
+    <dmn15:typeRef>string</dmn15:typeRef>
+    <dmn13:allowedValues></dmn13:allowedValues>
+  </extendedItemDefinition>
+</definitions>

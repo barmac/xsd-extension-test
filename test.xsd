@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xsd:schema
   targetNamespace="https://camunda.com/sdmn-test"
   xmlns="https://camunda.com/sdmn-test"
@@ -10,11 +10,43 @@
               schemaLocation="./DMN13/DMN13.xsd" />
   <xsd:import namespace="https://www.omg.org/spec/DMN/20230324/MODEL/"
               schemaLocation="./DMN15/DMN15.xsd" />
-  <xsd:element name="wrapper" type="tWrapper"/>
-  <xsd:complexType name="tWrapper">
+
+  <xsd:element name="definitions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="itemDefinition" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="extendedItemDefinition" minOccurs="0" maxOccurs="unbounded"/>
+        <!-- <xsd:choice>
+          <xsd:element ref="dmn13extendedItemDefinition" />
+          <xsd:element ref="dmn15extendedItemDefinition" />
+        </xsd:choice> -->
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="itemDefinition" type="tItemDefinition"/>
+  <xsd:complexType name="tItemDefinition">
     <xsd:choice>
       <xsd:element ref="dmn13:itemDefinition" />
       <xsd:element ref="dmn15:itemDefinition" />
     </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:element name="extendedItemDefinition" />
+
+  <xsd:element substitutionGroup="extendedItemDefinition" name="dmn13extendedItemDefinition" type="tdmn13ExtendedItemDefinition"/>
+  <xsd:complexType name="tdmn13ExtendedItemDefinition">
+    <xsd:complexContent>
+      <xsd:extension base="dmn13:tItemDefinition">
+        <xsd:attribute name="itemKind" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element substitutionGroup="extendedItemDefinition" name="dmn15extendedItemDefinition" type="tdmn15ExtendedItemDefinition"/>
+  <xsd:complexType name="tdmn15ExtendedItemDefinition">
+    <xsd:complexContent>
+      <xsd:extension base="dmn15:tItemDefinition" />
+    </xsd:complexContent>
   </xsd:complexType>
 </xsd:schema>
