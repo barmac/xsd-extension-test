@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sdmn="https://www.omg.org/spec/SDMN/20211108/MODEL"
+    elementFormDefault="qualified">
+  <!-- Chamelion Design or targetNamespace="https://www.omg.org/spec/SDMN/20211108/EXTENSIONS/DMN/" -->
+
+  <xsd:import schemaLocation="./SDMN/SDMN-Semantic.xsd"
+    namespace="" />
+
+  <xsd:group name="itemDefinitionElements">
+    <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="sce:SemanticReference">
+            <xsd:annotation>
+                <xsd:documentation>
+                    Element Role: semanticReference
+                    A ItemDefinition can include multiple SemanticReference elements. This attribute was added because ItemDefinition is based on the 
+                    DMN ItemDefinition, which is not based on the SCE specification and thus, does not have a built in SemanticReference as part 
+                    of its definition.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="1" maxOccurs="1" name="itemKindRef" type="sdmn:tItemKind">
+            <xsd:annotation>
+                <xsd:documentation>
+                    This defines the nature of the DataItem. Possible values are physical, information, conceptual, and others. 
+                    The default value is information. If the ItemDefinition has itemComponents or itemComponentRefs, 
+                    then the itemKind for each of these sub-ItemDefinitions must match the top-level ItemDefinition. 
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="1" maxOccurs="1" name="multiplicityKindRef" type="sdmn:tMultiplicityKind">
+            <xsd:annotation>
+                <xsd:documentation>
+                    This setting the Multipliciy of the ItemDefinition. The default is ExactlyOne. This attribute MUST have the same value as the 
+                    multiplicty attribute of the associated DataItem. This 
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:element>
+    </xsd:sequence>                
+  </xsd:group>
+
+  <xsd:attributeGroup name="itemDefinitionAttributes">
+    <xsd:attribute name="itemDefinitionRef" type="xsd:QName" use="optional">
+        <xsd:annotation>
+            <xsd:documentation>
+                A reference to an external ItemDefinition that is imported into this Shared Data Model. The ItemDefinition and its details can 
+                only be viewed in this model. Any changes to the original must be carried out in the source Shared Data Model. Other types of 
+                structures are not allowed for the SDMN . However, BPMN Data Objects and CMMN Case File Items have the capability of references 
+                other types of structures. These other types of structures would not be a part of the SDMN Shared Data Model.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+</xsd:schema>

@@ -4,15 +4,14 @@ xmlns="https://camunda.com/sdmn-test"
 xmlns:sdmn="https://camunda.com/sdmn-test"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:dmn="https://www.omg.org/spec/DMN/20191111/MODEL/"
-xmlns:dmn13="https://www.omg.org/spec/SDMN/20211108/BINDING/DMN/20191111/MODEL/"
 xsi:schemaLocation="https://camunda.com/sdmn-test test.xsd"
 >
-  <dmn13:itemDefinition name="Name" isCollection="false">
+  <sdmn:itemDefinition name="Name" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
-    <dmn13:itemKindRef id="iKR_Unspecified"
+    <sdmn:itemKindRef id="iKR_Unspecified"
       conceptURI="https://www.omg.org/spec/SDMN/20211108/MODEL/SDMNLibrary/ItemKinds#_adl020900-cgl033105-anep021715-10"/>
-    <dmn13:multiplicityKindRef id="mKR_Unspecified"
+    <sdmn:multiplicityKindRef id="mKR_Unspecified"
       conceptURI="https://www.omg.org/spec/SCE/20211108/MODEL/SDMNLibrary/MultiplicityKinds#_adl020900-cgl033105-anep021716-05"/>
-  </dmn13:itemDefinition>
+  </sdmn:itemDefinition>
 
 </sdmn:definitions>
