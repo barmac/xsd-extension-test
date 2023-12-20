@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.omg.org/spec/SDMN/20211108/BINDING/DMN/20191111/MODEL/"
+    xmlns:tns="https://www.omg.org/spec/SDMN/20211108/BINDING/DMN/20191111/MODEL/"
+    xmlns:dmn="https://www.omg.org/spec/DMN/20191111/MODEL/"
+    elementFormDefault="qualified">
+
+  <xsd:import schemaLocation="./DMN13/DMN13.xsd"
+    namespace="https://www.omg.org/spec/DMN/20191111/MODEL/" />
+
+  <xsd:include schemaLocation="./dmn-extensions.xsd" />
+  
+  <xsd:element name="itemDefinition" type="tns:tItemDefinition" />
+  <xsd:complexType name="tItemDefinition">
+    <xsd:complexContent>
+        <xsd:extension base="dmn:tItemDefinition">
+            <xsd:group ref="tns:itemDefinitionElements" />
+            <xsd:attributeGroup ref="tns:itemDefinitionAttributes" />
+        </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+</xsd:schema>
